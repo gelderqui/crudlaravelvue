@@ -136,6 +136,7 @@
 
 <script>
     export default {
+        props: ['ruta'],
         data (){
             return {
                 categoria_id: 0,
@@ -192,7 +193,7 @@
         methods : {
             listarCategoria (page,buscar,criterio){
                 let me=this;
-                var url= '/categoria?page=' + page + '&buscar='+ buscar + '&criterio='+ criterio;
+                var url= this.ruta + '/categoria?page=' + page + '&buscar='+ buscar + '&criterio='+ criterio;
                 axios.get(url).then(function (response) {
                     var respuesta= response.data;
                     me.arrayCategoria = respuesta.categorias.data;
@@ -216,7 +217,7 @@
                 
                 let me = this;
 
-                axios.post('/categoria/registrar',{
+                axios.post(this.ruta +'/categoria/registrar',{
                     'nombre': this.nombre,
                     'descripcion': this.descripcion
                 }).then(function (response) {
@@ -233,7 +234,7 @@
                 
                 let me = this;
 
-                axios.put('/categoria/actualizar',{
+                axios.put(this.ruta +'/categoria/actualizar',{
                     'nombre': this.nombre,
                     'descripcion': this.descripcion,
                     'id': this.categoria_id
@@ -300,7 +301,7 @@
                 if (result.value) {
                     let me = this;
 
-                    axios.put('/categoria/activar',{
+                    axios.put(this.ruta +'/categoria/activar',{
                         'id': id
                     }).then(function (response) {
                         me.listarCategoria(1,'','nombre');

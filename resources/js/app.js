@@ -33,6 +33,11 @@ Vue.component('categoria', CategoriaComponent);
 const app = new Vue({
     el: '#app',
     data :{
-        menu : 0
+        menu : 0,
+                //ruta: 'http://panaderia.atwebpages.com/public_html'
+          //ruta: 'http://localhost:80/arch/crudlaravelvue/public'
+         //ruta: 'http://192.168.0.105:80/sistemaprestamo/public'
+         
+         ruta: 'http://crudlaravelvue.mayahonh.com/public'
     }
 });

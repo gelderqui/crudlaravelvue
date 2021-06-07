@@ -1982,6 +1982,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['ruta'],
   data: function data() {
     return {
       categoria_id: 0,
@@ -2041,7 +2042,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     listarCategoria: function listarCategoria(page, buscar, criterio) {
       var me = this;
-      var url = '/categoria?page=' + page + '&buscar=' + buscar + '&criterio=' + criterio;
+      var url = this.ruta + '/categoria?page=' + page + '&buscar=' + buscar + '&criterio=' + criterio;
       axios.get(url).then(function (response) {
         var respuesta = response.data;
         me.arrayCategoria = respuesta.categorias.data;
@@ -2063,7 +2064,7 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       var me = this;
-      axios.post('/categoria/registrar', {
+      axios.post(this.ruta + '/categoria/registrar', {
         'nombre': this.nombre,
         'descripcion': this.descripcion
       }).then(function (response) {
@@ -2079,7 +2080,7 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       var me = this;
-      axios.put('/categoria/actualizar', {
+      axios.put(this.ruta + '/categoria/actualizar', {
         'nombre': this.nombre,
         'descripcion': this.descripcion,
         'id': this.categoria_id
@@ -2138,7 +2139,7 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (result) {
         if (result.value) {
           var me = _this2;
-          axios.put('/categoria/activar', {
+          axios.put(_this2.ruta + '/categoria/activar', {
             'id': id
           }).then(function (response) {
             me.listarCategoria(1, '', 'nombre');
@@ -50922,7 +50923,11 @@ Vue.component('categoria', _components_Categoria_vue__WEBPACK_IMPORTED_MODULE_0_
 var app = new Vue({
   el: '#app',
   data: {
-    menu: 0
+    menu: 0,
+    //ruta: 'http://panaderia.atwebpages.com/public_html'
+    //ruta: 'http://localhost:80/arch/crudlaravelvue/public'
+    //ruta: 'http://192.168.0.105:80/sistemaprestamo/public'
+    ruta: 'http://crudlaravelvue.mayahonh.com/public'
   }
 });
 })();
