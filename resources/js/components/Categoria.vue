@@ -262,7 +262,7 @@
                 if (result.value) {
                     let me = this;
 
-                    axios.put('/categoria/desactivar',{
+                    axios.put(this.ruta +'/categoria/desactivar',{
                         'id': id
                     }).then(function (response) {
                         me.listarCategoria(1,'','nombre');

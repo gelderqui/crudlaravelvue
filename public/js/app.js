@@ -2109,7 +2109,7 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (result) {
         if (result.value) {
           var me = _this;
-          axios.put('/categoria/desactivar', {
+          axios.put(_this.ruta + '/categoria/desactivar', {
             'id': id
           }).then(function (response) {
             me.listarCategoria(1, '', 'nombre');
