@@ -77,11 +77,11 @@
         <!-- /Fin del contenido principal -->
     </div>   
     </div>
-    <footer class="app-footer">
+    <!-- <footer class="app-footer">
         <span><a href="http://www.incanatoit.com/">IncanatoIT</a> &copy; 2017</span>
         <span class="ml-auto">Desarrollado por <a href="http://www.incanatoit.com/">IncanatoIT</a></span>
     </footer>
-    
+     -->
 
     <script src="js/app.js"></script>
     <script src="js/plantilla.js"></script>
