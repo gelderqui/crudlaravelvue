@@ -35,9 +35,9 @@ const app = new Vue({
     data :{
         menu : 0,
                 //ruta: 'http://panaderia.atwebpages.com/public_html'
-          ruta: 'http://localhost:80/public/crudlaravelvue/public'
+          ruta: 'http://localhost:80/principal/2crudlaravelvue/public'
          //ruta: 'http://192.168.0.105:80/sistemaprestamo/public'
          
-         //ruta: 'http://crudlaravelvue.mayahonh.com/public'
+         //ruta: 'http://crudlaravelvue.gelderqui.com/public'
     }
 });
